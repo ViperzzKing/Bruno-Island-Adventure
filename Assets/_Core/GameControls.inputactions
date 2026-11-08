@@ -1,0 +1,101 @@
+{
+    "version": 1,
+    "name": "GameControls",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "39ab9cce-30d9-41f4-8b5b-001af932f22d",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "916417be-1336-485a-8e5a-c522187ce872",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "09f92426-468a-49a7-ab44-e336fa713874",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "d0617352-fe38-4181-8c8f-bcce41e198ff",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Heal",
+                    "type": "Button",
+                    "id": "65ad5bc0-418a-461e-b262-90f43d1f0c15",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "9fb00c1a-c056-4b62-9e0f-4da0799ff022",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": []
+        },
+        {
+            "name": "GUI",
+            "id": "0c75eb6f-7bf2-4ecf-a08f-04f1168ec989",
+            "actions": [
+                {
+                    "name": "Navigate",
+                    "type": "Button",
+                    "id": "3413fb4a-5c74-492e-afc3-3b3767166c11",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "dc5d27dd-19cf-4b3f-acae-852162ae31f1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Unpause",
+                    "type": "Button",
+                    "id": "eb89b6ac-36f0-4da1-9753-8c454a804d90",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}

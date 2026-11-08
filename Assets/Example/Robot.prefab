@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2522296717128032609}
-  - component: {fileID: 7512492227615180911}
+  - component: {fileID: -5013005523866373084}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -259,7 +259,7 @@ Transform:
   - {fileID: 4566606329361047841}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7512492227615180911
+--- !u!114 &-5013005523866373084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RPG.Example.Robot
   numberr: 1
-  price: 18.890999
+  price: 20.99
   isTurnedOn: 0
 --- !u!1 &5179263900503754829
 GameObject:
