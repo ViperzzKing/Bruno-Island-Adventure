@@ -60,8 +60,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Grass Edge Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c44338b7bc27b1e429e77f725f2fea37, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c44338b7bc27b1e429e77f725f2fea37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1534481771285531372}
   m_SourcePrefab: {fileID: 100100000, guid: c44338b7bc27b1e429e77f725f2fea37, type: 3}
+--- !u!1 &6459890170820543192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c44338b7bc27b1e429e77f725f2fea37, type: 3}
+  m_PrefabInstance: {fileID: 6153969000939716489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1534481771285531372
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459890170820543192}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.134}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.5, z: -0.36600003}
+  m_TimeToStationary: 0.5
