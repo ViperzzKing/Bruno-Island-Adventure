@@ -4,15 +4,16 @@ using UnityEngine.InputSystem;
 
 namespace RPG.Character
 {
+    [RequireComponent(typeof(NavMeshAgent))]
     public class Movement : MonoBehaviour
     {
-        private NavMeshAgent player;
+        private NavMeshAgent agent;
 
         private Vector3 movementVector;
 
         private void Awake()
         {
-            player = GetComponent<NavMeshAgent>();
+            agent = GetComponent<NavMeshAgent>();
         }
 
         private void Update()
@@ -23,8 +24,8 @@ namespace RPG.Character
 
         private void MovePlayer()
         {
-            Vector3 offset = (movementVector * player.speed) * Time.deltaTime;
-            player.Move(offset);
+            Vector3 offset = (movementVector * agent.speed) * Time.deltaTime;
+            agent.Move(offset);
         }
 
         public void HandleMove(InputAction.CallbackContext context)
@@ -43,6 +44,11 @@ namespace RPG.Character
             Quaternion endRotation = Quaternion.LookRotation(movementVector);
 
             transform.rotation = Quaternion.Lerp(startRotation, endRotation, 0.1f);
+        }
+
+        public void MoveAgentByDestination(Vector3 destination)
+        {
+            agent.SetDestination(destination);
         }
     }
 }
