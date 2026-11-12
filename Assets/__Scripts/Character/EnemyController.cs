@@ -6,32 +6,46 @@ namespace RPG.Character
 {
     public class EnemyController : MonoBehaviour
     {
-        private GameObject player;
-        private Movement movementCMP;
 
         public float chaseRange = 2.5f;
         public float attackRange = 0.75f;
-        [NonSerialized] public float distanceToPlayer;
+
+        [NonSerialized] public GameObject player;
+        [NonSerialized] public Movement movementCMP;
+        [NonSerialized] public float distanceFromPlayer;
+        [NonSerialized] public Vector3 originalPosition;
+
+        private AI_BaseState currentState;
+        public AI_ReturnState returnState = new AI_ReturnState();
+        public AI_ChaseState chaseState = new AI_ChaseState();
+        public AI_AttackState attackState = new AI_AttackState();
 
         private void Awake()
         {
+            currentState = returnState;
+
             player = GameObject.FindWithTag(Constants.PLAYER_TAG);
             movementCMP = GetComponent<Movement>();
+
+            originalPosition = transform.position;
+        }
+
+        private void Start()
+        {
+            currentState.EnterState(this);
         }
 
         private void Update()
         {
             CalculateDistance();
-            ChasePlayer();
+
+            currentState.UpdateState(this);
         }
 
-        private void ChasePlayer()
+        public void SwitchState(AI_BaseState newState)
         {
-            if (player == null) return;
-            if (distanceToPlayer <= chaseRange)
-            {
-                movementCMP.MoveAgentByDestination(player.transform.position);
-            }
+            currentState = newState;
+            currentState.EnterState(this);
         }
 
         private void CalculateDistance()
@@ -41,15 +55,21 @@ namespace RPG.Character
             Vector3 playerPosition = player.transform.position;
             Vector3 enemyPosition = transform.position;
 
-            distanceToPlayer = Vector3.Distance(enemyPosition, playerPosition);
+            distanceFromPlayer = Vector3.Distance(enemyPosition, playerPosition);
         }
 
         private void OnDrawGizmosSelected()
         {
+            Vector3 enemyPositon = transform.position;
+
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, chaseRange);
+            Gizmos.DrawWireSphere(enemyPositon, chaseRange);
+
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.DrawWireSphere(enemyPositon, attackRange);
+
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(enemyPositon, originalPosition);
         }
     }
 }
