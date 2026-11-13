@@ -120,6 +120,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 807478853106045122, guid: dde27be68af450144a011c832e58a82c, type: 3}
+      propertyPath: m_Height
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 807478853106045122, guid: dde27be68af450144a011c832e58a82c, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6104256849584289879, guid: dde27be68af450144a011c832e58a82c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -162,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7982907968524084697, guid: dde27be68af450144a011c832e58a82c, type: 3}
       propertyPath: m_Name
-      value: Enemy Stationary Guard
+      value: Stationary Guard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
