@@ -8,6 +8,7 @@ namespace RPG.Character
 
         public override void EnterState(EnemyController enemy)
         {
+            enemy.movementCMP.UpdateAgentSpeed(enemy.stats.walkSpeed);
 
             if (enemy.patrolCMP != null)
             {

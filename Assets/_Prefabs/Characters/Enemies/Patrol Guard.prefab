@@ -128,6 +128,10 @@ PrefabInstance:
       propertyPath: m_BaseOffset
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3359419838103278917, guid: dde27be68af450144a011c832e58a82c, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 7970133f433180f468dc917b84bce885, type: 2}
     - target: {fileID: 6104256849584289879, guid: dde27be68af450144a011c832e58a82c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -205,3 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd374e2d3b260244883d069303384f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Patrol
+  splineGameObject: {fileID: 0}
+  walkDuration: 3
+  pauseDuration: 2

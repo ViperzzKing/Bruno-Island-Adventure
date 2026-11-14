@@ -33,7 +33,7 @@ namespace RPG.Character
             Vector2 input = context.ReadValue<Vector2>();
             movementVector = new Vector3(input.x, 0, input.y);
 
-            Debug.Log(movementVector);
+            //Debug.Log(movementVector);
         }
 
         private void Rotate()
@@ -70,6 +70,11 @@ namespace RPG.Character
         public void MoveAgentByOffset(Vector3 offset)
         {
             agent.Move(offset);
+        }
+
+        public void UpdateAgentSpeed(float newSpeed)
+        {
+            agent.speed = newSpeed;
         }
     }
 }
