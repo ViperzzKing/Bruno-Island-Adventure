@@ -16,6 +16,8 @@ namespace RPG.Character
                 enemy.SwitchState(enemy.chaseState);
             }
 
+            Vector3 oldPosition = enemy.patrolCMP.GetNextPosition();
+
             enemy.patrolCMP.CalculateNextPositon();
 
             Vector3 currentPositon = enemy.transform.position;
@@ -23,6 +25,17 @@ namespace RPG.Character
             Vector3 offset = newPostion - currentPositon;
 
             enemy.movementCMP.MoveAgentByOffset(offset);
+
+            Vector3 fartherOutPostion = enemy.patrolCMP.GetFartherOutPosition();
+            Vector3 newForwardVector = fartherOutPostion - currentPositon;
+            newForwardVector.y = 0;
+
+            enemy.movementCMP.Rotate(newForwardVector);
+
+            if (oldPosition == newPostion)
+            {
+                enemy.movementCMP.isMoving = false;
+            }
         }
     }
 }

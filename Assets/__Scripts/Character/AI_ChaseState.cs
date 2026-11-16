@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace RPG.Character
 {
     public class AI_ChaseState : AI_BaseState
     {
         public override void EnterState(EnemyController enemy)
         {
-            enemy.movementCMP.UpdateAgentSpeed(enemy.stats.runSpeed);
+            enemy.movementCMP.UpdateAgentSpeed(enemy.stats.runSpeed, false);
         }
 
         public override void UpdateState(EnemyController enemy)
@@ -23,6 +25,11 @@ namespace RPG.Character
 
             enemy.movementCMP.MoveAgentByDestination
                 (enemy.player.transform.position);
+
+            Vector3 playerDirection =
+                enemy.player.transform.position - enemy.transform.position;
+
+            enemy.movementCMP.Rotate(playerDirection);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace RPG.Character
 
         public override void EnterState(EnemyController enemy)
         {
-            enemy.movementCMP.UpdateAgentSpeed(enemy.stats.walkSpeed);
+            enemy.movementCMP.UpdateAgentSpeed(enemy.stats.walkSpeed, true);
 
             if (enemy.patrolCMP != null)
             {
@@ -38,7 +38,30 @@ namespace RPG.Character
                     enemy.SwitchState(enemy.patrolState);
                     return;
                 }
+                else
+                {
+                    enemy.movementCMP.isMoving = false;
+                    enemy.movementCMP.Rotate(enemy.movementCMP.originalForwardVector);
+                }
+            }
+            else
+            {
+                if (enemy.patrolCMP != null)
+                {
+                    Vector3 newForwardVector =
+                        targetPostion - enemy.transform.position;
+                    newForwardVector.y = 0;
 
+                    enemy.movementCMP.Rotate(newForwardVector);
+                }
+                else
+                {
+                    Vector3 newForwardVector =
+                        enemy.originalPosition - enemy.transform.position;
+                    newForwardVector.y = 0;
+
+                    enemy.movementCMP.Rotate(newForwardVector);
+                }
             }
         }
     }
