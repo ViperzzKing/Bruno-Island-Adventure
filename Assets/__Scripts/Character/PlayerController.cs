@@ -19,6 +19,7 @@ namespace RPG.Character
         private void Start()
         {
             healthCMP.healthPoints = stats.health;
+
             combatCMP.damage = stats.damage;
         }
     }

@@ -78,6 +78,7 @@ namespace RPG.Character
 
         public void StopMovingAgent()
         {
+            isMoving = false;
             agent.ResetPath();
         }
 

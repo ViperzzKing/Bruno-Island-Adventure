@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104256849584289879}
   - component: {fileID: 807478853106045122}
+  - component: {fileID: 6980816621344202650}
   - component: {fileID: 5962486397713651588}
   - component: {fileID: 3359419838103278917}
   - component: {fileID: -2328106818637239846}
@@ -59,6 +60,29 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &6980816621344202650
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982907968524084697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &5962486397713651588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8bcb6fabbfae64e97f20c5fb8869ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RPG.Character.EnemyController
-  chaseRange: 4
-  attackRange: 1
+  chaseRange: 3
+  attackRange: 0.75
   stats: {fileID: 0}
 --- !u!114 &-2328106818637239846
 MonoBehaviour:
@@ -179,12 +203,33 @@ PrefabInstance:
       value: KayKit Animated Character_v1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2831370008685738083, guid: 4656325233de3d242b0359d9563e23c2, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4656325233de3d242b0359d9563e23c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6435205752356944998}
   m_SourcePrefab: {fileID: 100100000, guid: 4656325233de3d242b0359d9563e23c2, type: 3}
 --- !u!4 &5112776081563203560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4656325233de3d242b0359d9563e23c2, type: 3}
   m_PrefabInstance: {fileID: 4719354305475072003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5602454217341037906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4656325233de3d242b0359d9563e23c2, type: 3}
+  m_PrefabInstance: {fileID: 4719354305475072003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6435205752356944998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602454217341037906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128ba80b363a47a428063657be3c5e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RPG.Utility.BubbleEvent

@@ -15,16 +15,18 @@ namespace RPG.Character
         [NonSerialized] public Patrol patrolCMP;
         [NonSerialized] public float distanceFromPlayer;
         [NonSerialized] public Vector3 originalPosition;
-        private Health healthCMP;
-        private Combat combatCMP;
 
+        private Health healthCMP;
+        [NonSerialized] public Combat combatCMP;
         public CharacterStats_SO stats;
 
+        // STATES
         private AI_BaseState currentState;
         public AI_ReturnState returnState = new AI_ReturnState();
         public AI_ChaseState chaseState = new AI_ChaseState();
         public AI_AttackState attackState = new AI_AttackState();
         public AI_PatrolState patrolState = new AI_PatrolState();
+        public AI_DefeatedState defeatedState = new AI_DefeatedState();
 
         private void Awake()
         {
@@ -47,6 +49,17 @@ namespace RPG.Character
             currentState.EnterState(this);
             healthCMP.healthPoints = stats.health;
             combatCMP.damage = stats.damage;
+        }
+
+        private void OnEnable()
+        {
+            healthCMP.OnStartDefeated += HandleStartDefeated;
+        }
+
+
+        private void OnDisable()
+        {
+            healthCMP.OnStartDefeated += HandleStartDefeated;
         }
 
         private void Update()
@@ -84,6 +97,12 @@ namespace RPG.Character
 
             Gizmos.color = Color.white;
             Gizmos.DrawLine(enemyPositon, originalPosition);
+        }
+
+        private void HandleStartDefeated()
+        {
+            SwitchState(defeatedState);
+            currentState.EnterState(this);
         }
     }
 }
